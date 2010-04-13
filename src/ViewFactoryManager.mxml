@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" 
+				width="1000" height="580" creationComplete="onInit()" 
+				xmlns:view="com.cygame.module.menu.view.*">
+	<mx:Script>
+		<![CDATA[
+			import com.cygame.facade.ApplicationFacade;
+			import com.cygame.module.menu.vo.MenuWinActionVO;
+			import com.cygame.persist.MenuWinType;
+			import com.cygame.persist.NotificationConst;
+			
+			private var applicationfacade:ApplicationFacade = ApplicationFacade.getInstance();
+			
+			private function onInit():void
+			{
+				for(var i:int = 0; i<hb.numChildren  ; i++)
+				{
+					(hb.getChildAt(i) as Button).addEventListener(MouseEvent.CLICK , clickHandle);
+				}
+			}
+			
+			private function clickHandle(evt:MouseEvent) : void
+			{
+				var type:String = "";
+				var status:String = "";
+				switch(evt.target.label){
+					case "添加一个红":
+						type = MenuWinType.RED;
+						status = MenuWinActionVO.OPEN;
+						break;
+					case "添加一个黑":
+						type = MenuWinType.BLACK;
+						status = MenuWinActionVO.OPEN;
+						break;
+					case "添加一个白":
+						type = MenuWinType.WHITE;
+						status = MenuWinActionVO.OPEN;
+						break;
+					case "删除一个红":
+						type = MenuWinType.RED;
+						status = MenuWinActionVO.CLOSE;
+						break;
+					case "全部删除":
+						status = MenuWinActionVO.CLOSE_ALL;
+						break;
+				}
+					
+				var sendObj:MenuWinActionVO = new MenuWinActionVO(type,status);
+				applicationfacade.sendNotification(NotificationConst.MENU_WIN_CHANGE ,sendObj );
+			}
+			
+			
+		]]>
+	</mx:Script>
+	<view:MenuWinContainer width="100%" height="100%" />
+	<mx:HBox id="hb" bottom="0">
+		<mx:Button label="添加一个红" />
+		<mx:Button label="添加一个黑" />
+		<mx:Button label="添加一个白" />
+		<mx:Button label="删除一个红" />
+		<mx:Button label="全部删除" />
+	</mx:HBox>
+</mx:Application>

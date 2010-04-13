@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+		   width="300" height="400" backgroundColor="white"
+		   >
+	<mx:Script>
+		<![CDATA[
+			import com.cygame.facade.ApplicationFacade;
+			import com.cygame.module.menu.vo.MenuWinActionVO;
+			import com.cygame.persist.MenuWinType;
+			import com.cygame.persist.NotificationConst;
+			
+			override protected function  createChildren():void{
+				super.createChildren();
+				addEventListener(MouseEvent.MOUSE_DOWN , mouseDownhandle);
+				addEventListener(MouseEvent.MOUSE_UP , mouseUphandle);
+			}
+			
+			public function mouseDownhandle(evt:MouseEvent):void
+			{
+				this.startDrag();
+				var sendObj:MenuWinActionVO = new MenuWinActionVO(MenuWinType.WHITE, MenuWinActionVO.OPEN);
+				ApplicationFacade.getInstance().sendNotification(NotificationConst.MENU_WIN_CHANGE ,sendObj );
+			}
+			public function mouseUphandle(evt:MouseEvent):void
+			{
+				this.stopDrag();
+			}
+		]]>
+	</mx:Script>
+</mx:Canvas>
