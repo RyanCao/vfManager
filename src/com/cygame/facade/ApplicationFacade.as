@@ -1,7 +1,7 @@
 package com.cygame.facade
 {
 
-	import com.cygame.module.menu.command.MenuWinChangeCommand;
+	import com.cygame.common.command.MenuWinChangeCommand;
 	import com.cygame.persist.NotificationConst;
 	
 	import org.puremvc.as3.patterns.facade.Facade;

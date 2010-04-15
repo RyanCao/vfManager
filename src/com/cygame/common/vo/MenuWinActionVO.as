@@ -1,4 +1,4 @@
-package com.cygame.module.menu.vo
+package com.cygame.common.vo
 {
 	public class MenuWinActionVO
 	{

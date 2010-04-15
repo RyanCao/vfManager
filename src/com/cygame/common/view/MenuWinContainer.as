@@ -1,8 +1,8 @@
-package com.cygame.module.menu.view
+package com.cygame.common.view
 {
 	import com.cygame.common.interfaces.IWinCanvas;
 	import com.cygame.facade.ApplicationFacade;
-	import com.cygame.module.menu.mediator.MenuWinContainerMediator;
+	import com.cygame.common.mediator.MenuWinContainerMediator;
 	
 	import flash.display.DisplayObject;
 	

@@ -1,6 +1,6 @@
-package com.cygame.module.menu.mediator
+package com.cygame.common.mediator
 {
-	import com.cygame.module.menu.view.MenuWinContainer;
+	import com.cygame.common.view.MenuWinContainer;
 	
 	import mx.core.UIComponent;
 	

@@ -5,7 +5,7 @@
 		<![CDATA[
 			import com.cygame.common.interfaces.IWinCanvas;
 			import com.cygame.facade.ApplicationFacade;
-			import com.cygame.module.menu.vo.MenuWinActionVO;
+			import com.cygame.common.vo.MenuWinActionVO;
 			import com.cygame.persist.MenuWinType;
 			import com.cygame.persist.NotificationConst;
 			override protected function  createChildren():void{

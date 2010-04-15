@@ -1,9 +1,9 @@
-package com.cygame.module.menu.command
+package com.cygame.common.command
 {
 	import com.cygame.common.manager.ViewFactory;
 	import com.cygame.common.vo.ViewActionVO;
-	import com.cygame.module.menu.view.MenuWinContainer;
-	import com.cygame.module.menu.vo.MenuWinActionVO;
+	import com.cygame.common.view.MenuWinContainer;
+	import com.cygame.common.vo.MenuWinActionVO;
 	import com.cygame.persist.MenuWinType;
 	
 	import org.puremvc.as3.interfaces.INotification;

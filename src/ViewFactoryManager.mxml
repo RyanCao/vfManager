@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" 
 				width="1000" height="580" creationComplete="onInit()" 
-				xmlns:view="com.cygame.module.menu.view.*">
+				xmlns:view="com.cygame.module.menu.view.*" xmlns:view1="com.cygame.common.view.*">
 	<mx:Script>
 		<![CDATA[
 			import com.cygame.facade.ApplicationFacade;
-			import com.cygame.module.menu.vo.MenuWinActionVO;
+			import com.cygame.common.vo.MenuWinActionVO;
 			import com.cygame.persist.MenuWinType;
 			import com.cygame.persist.NotificationConst;
 			
@@ -52,7 +52,7 @@
 			
 		]]>
 	</mx:Script>
-	<view:MenuWinContainer width="100%" height="100%" />
+	<view1:MenuWinContainer width="100%" height="100%" />
 	<mx:HBox id="hb" bottom="0">
 		<mx:Button label="添加一个红" />
 		<mx:Button label="添加一个黑" />
